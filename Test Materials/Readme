@@ -1,0 +1,46 @@
+Emirate ID Verification System 
+Version 1.0  
+Login Credentials:
+ UserName =user
+ Password =1234
+
+
+
+ **Overview**  
+This system manages leave permissions by validating Emirate IDs. Only pre-authorized IDs are granted leave access. The system automatically extracts **Name** and **Emirate ID** from uploaded documents, reducing manual entry errors.  
+
+
+ **Key Features**  
+✅ **Strict Access Control**  
+- Only IDs from the `Allowed_IDs` database will be approved for leave requests.  
+- Unauthorized IDs receive immediate rejection.  
+
+✅ **Autofill from Emirate ID**  
+- **Name** and **Emirate ID** fields auto-populate using OCR technology.  
+- Manual input is disabled to ensure data integrity.  
+
+✅ **Error Handling**  
+- Failed data extraction triggers:  
+  
+  ❌ Error: Name/ID extraction failed. Please reupload a clear document.  
+    
+Blurry, expired, or damaged documents are rejected instantly.  
+
+
+**Workflow**  
+1. **Upload** Emirate ID (PDF/image)  
+2. **Autofill**  
+   - System extracts:  
+     - `Full Name`  
+     - `Emirate ID Number`  
+3. **Validation**  
+   - Approved: ID exists in `Allowed_IDs` → Leave request proceeds.  
+   - Rejected: ID not found → Access denied.  
+4. **Reupload**  
+   - Extraction errors require new document upload.  
+
+### **Notes**  
+- ✨ **No manual overrides** – System strictly follows `Allowed_IDs` list.  
+- 🔒 **Data Security**: Uploads are encrypted; extracted data is never stored.  
+- ⚙️ **Supported Formats**: JPEG, PNG, PDF (max 10MB).  
+
